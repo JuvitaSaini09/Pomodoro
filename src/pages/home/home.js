@@ -1,8 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import "./home.css";
 import { TodoList } from "../../components/todoList/todoList";
+import { useTodoListContext } from "../../context/todoListContext/todoListContext";
 
 export const Home = () => {
+  const {addTodoTasks}=useTodoListContext();
+  const [inputText,setInputText]=useState('');
+
+  const addTaskHandler=()=>{
+    addTodoTasks(inputText);
+    setInputText('')
+  }
+  
   return (
     <>
       <div className="home-body-parent">
@@ -20,8 +29,10 @@ export const Home = () => {
                   type="text"
                   className="input-add-task"
                   placeholder="add task here"
+                  onChange={e=>setInputText(e.target.value)}
+                  value={inputText}
                 ></input>
-                <button className="add-task-btn">+</button>
+                <button className="add-task-btn" onClick={addTaskHandler}>+</button>
               </div>
             </div>
 
