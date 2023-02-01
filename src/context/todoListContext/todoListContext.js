@@ -1,5 +1,5 @@
 import { createContext,useContext,useState } from "react";
-
+import uuid from 'react-uuid';
 
 
 const todoListContext=createContext(null);
@@ -9,11 +9,16 @@ const TodoListContextProvider=({children})=>{
     const [todoTasks,setTodoTasks]=useState([]);
 
     const addTodoTasks=(inputText)=>{
-        setTodoTasks([...todoTasks,inputText])
+        setTodoTasks([...todoTasks,{
+            id:uuid(),
+            title:inputText,
+            completed:false
+        }])
     }
 
-    const deleteTodoTasks=()=>{
-        console.log("task deleted")
+    const deleteTodoTasks=taskToBeDeleted=>{
+        const t=todoTasks.filter(task=>task.id!==taskToBeDeleted.id)
+        setTodoTasks(t);
     }
     
 return(
