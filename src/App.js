@@ -1,9 +1,15 @@
 import './App.css';
 
+import {Route,Routes} from "react-router-dom"
+import { Home } from './pages/allPages';
+
 function App() {
+
   return (
     <div className="App">
-      <h1>Pomodoro App</h1>
+      <Routes >
+        <Route path="/" element={<Home />} />
+      </Routes>
     </div>
   );
 }
