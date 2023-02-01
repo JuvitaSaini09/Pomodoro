@@ -5,7 +5,7 @@ import { useTodoListContext } from "../../context/todoListContext/todoListContex
 import { TodoModal } from "../../components/modal/todoModal";
 
 export const Home = () => {
-  const {isModalDisplay,setModalDisplay}=useTodoListContext();
+  const {isModalDisplay,setModalDisplay,setEditingOrAdding}=useTodoListContext();
   
   return (
     <>
@@ -21,7 +21,13 @@ export const Home = () => {
               <h2>To - Do List</h2>
               <div>
     
-                <button className="add-task-btn" onClick={()=>setModalDisplay(true)}>+</button>
+                <button className="add-task-btn" onClick={()=>{
+                  setModalDisplay(true);
+                  setEditingOrAdding({
+                    isAddingOrEditing:'adding',
+                    task:''
+                 });
+                  }}>+</button>
               </div>
             </div>
 

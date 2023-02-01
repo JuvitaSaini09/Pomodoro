@@ -3,15 +3,25 @@ import { useTodoListContext } from "../../context/todoListContext/todoListContex
 import "./todoModal.css"
 
 export const TodoModal=()=>{
-    const {isModalDisplay,setModalDisplay,addTodoTasks,inputModal,setInputModal}=useTodoListContext();
+    const {isModalDisplay,setModalDisplay,addTodoTasks,inputModal,setInputModal,editingOrAdding,editTodoTasks}=useTodoListContext();
 
     const addTaskHandler=()=>{
         addTodoTasks(inputModal);
-        setInputModal({
-            title:'',
-            description:'',
-            time:''
-        })
+      }
+
+
+
+      const editTaskHandler=()=>{
+        editTodoTasks(inputModal);
+      }
+
+      const addBtnHandler=()=>{
+        if(editingOrAdding.isAddingOrEditing==="adding"){
+            addTaskHandler()
+        }
+        if(editingOrAdding.isAddingOrEditing==="editing"){
+            editTaskHandler()
+        }
       }
     
   const closeModalHandler=()=>{
@@ -40,7 +50,7 @@ export const TodoModal=()=>{
 
             <div className="modalBtn" >
                 <button className="cancelBtn" onClick={()=>closeModalHandler()} >Cancel</button>
-                <button className="addBtn" onClick={()=>addTaskHandler()}>Add</button>
+                <button className="addBtn" onClick={()=>{addBtnHandler()}} >Add</button>
             </div>
         </div>
     )
