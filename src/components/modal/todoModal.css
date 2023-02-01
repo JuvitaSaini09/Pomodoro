@@ -7,29 +7,65 @@
     top:10rem;
     left:auto;
     margin-left:7rem;
+    background-color: white;
 }
 
 .todoInputs{
     display:flex;
     flex-direction: column;
     margin:2rem 4rem;
-    overflow-wrap: break-word; 
+   border:none;
 }
 
 .todoInputs input{
     margin:5px 0;
    text-align: top;
+   background-color:rgb(244, 240, 240);
+   outline:none;
+   border:none;
+   padding:0 10px;
 }
 
-.addTimeInput{
-    height:2rem;
-}
-
-.addTitleInput{
-    height:2rem;
+.addTimeInput,.addTitleInput{
+    height:2.5rem;
 }
 
 
 .addDescriptionInput{
     height:10rem;
 }
+
+
+.modalBtn{
+  margin:2rem 4rem;
+  display: flex;
+  justify-content: space-evenly; 
+}
+
+.modalBtn button{
+    width:5rem;
+    height:1.6rem;
+    border:none;
+    cursor:pointer;
+    border-radius:5px;
+    font-weight:bold;
+}
+
+.cancelBtn{
+color:var(--secondary-blue);
+background-color: var(--transparent-blue);
+}
+.addBtn{
+    color:white;
+    background-color: var(--secondary-blue);
+    }
+
+    .cancelBtn:hover{
+        color: var(--primary-blue);
+        border:1px solid var(--primary-blue);
+    }
+    
+.addBtn:hover{
+    background-color: var(--primary-blue);
+}
+
