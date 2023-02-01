@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { useTodoListContext } from "../../context/todoListContext/todoListContext";
 import "./todoModal.css"
 
