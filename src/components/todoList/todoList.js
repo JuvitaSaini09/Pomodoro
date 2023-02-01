@@ -3,6 +3,7 @@ import "./todoList.css";
 
 export const TodoList = () => {
   const {todoTasks,deleteTodoTasks}=useTodoListContext();
+  const {setModalDisplay}=useTodoListContext();
 
   const deleteTaskHandler=task=>{
     deleteTodoTasks(task);
@@ -17,7 +18,7 @@ export const TodoList = () => {
               <li className="todo-task-list" key={task.id}>
           <p>{task.title}</p>
           <span>
-            <button className="edit-btn">
+            <button className="edit-btn" onClick={()=>setModalDisplay(true)}>
               <i className="far fa-edit"></i>
             </button>
             <button className="delete-btn"  onClick={()=>deleteTaskHandler(task)} >

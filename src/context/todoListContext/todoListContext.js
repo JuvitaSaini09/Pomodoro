@@ -7,6 +7,7 @@ const todoListContext=createContext(null);
 
 const TodoListContextProvider=({children})=>{
     const [todoTasks,setTodoTasks]=useState([]);
+    const [isModalDisplay,setModalDisplay]=useState(false);
 
     const addTodoTasks=(inputText)=>{
         setTodoTasks([...todoTasks,{
@@ -22,7 +23,7 @@ const TodoListContextProvider=({children})=>{
     }
     
 return(
-    <todoListContext.Provider value={{todoTasks,setTodoTasks,addTodoTasks,deleteTodoTasks}}>{children}</todoListContext.Provider>
+    <todoListContext.Provider value={{todoTasks,setTodoTasks,addTodoTasks,deleteTodoTasks,isModalDisplay,setModalDisplay}}>{children}</todoListContext.Provider>
 )
 }
 

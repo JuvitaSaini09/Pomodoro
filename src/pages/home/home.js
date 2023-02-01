@@ -5,9 +5,8 @@ import { useTodoListContext } from "../../context/todoListContext/todoListContex
 import { TodoModal } from "../../components/modal/todoModal";
 
 export const Home = () => {
-  const {addTodoTasks}=useTodoListContext();
+  const {addTodoTasks,isModalDisplay}=useTodoListContext();
   const [inputText,setInputText]=useState('');
-  const [isModalDisplay,setModalDisplay]=useState(true);
 
   const addTaskHandler=()=>{
     addTodoTasks(inputText);
