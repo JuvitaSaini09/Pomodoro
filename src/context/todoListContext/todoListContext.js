@@ -10,6 +10,7 @@ const TodoListContextProvider=({children})=>{
     const [isModalDisplay,setModalDisplay]=useState(false);
 
     const addTodoTasks=(inputText)=>{
+        if(inputText!=='')
         setTodoTasks([...todoTasks,{
             id:uuid(),
             title:inputText,
