@@ -1,19 +1,30 @@
 .todoModal{
-    height:25rem;
-    width:30rem;
+    height:27rem;
+    width:27rem;
     background-color: var(--dark-white);
     border-radius:20px;
     position:absolute;
-    top:10rem;
+    top:8rem;
     left:auto;
     margin-left:7rem;
     background-color: white;
 }
 
+.crossModalBtn{
+    border:none;
+    color:rgb(186, 182, 182);
+    font-size:1.2rem;
+    background-color:white;
+    position:absolute;
+    top:9px;
+    right:2rem;
+    cursor: pointer;
+}
+
 .todoInputs{
     display:flex;
     flex-direction: column;
-    margin:2rem 4rem;
+    margin:2rem 2rem;
    border:none;
 }
 

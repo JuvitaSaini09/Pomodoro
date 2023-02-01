@@ -5,13 +5,7 @@ import { useTodoListContext } from "../../context/todoListContext/todoListContex
 import { TodoModal } from "../../components/modal/todoModal";
 
 export const Home = () => {
-  const {addTodoTasks,isModalDisplay}=useTodoListContext();
-  const [inputText,setInputText]=useState('');
-
-  const addTaskHandler=()=>{
-    addTodoTasks(inputText);
-    setInputText('')
-  }
+  const {isModalDisplay,setModalDisplay}=useTodoListContext();
   
   return (
     <>
@@ -26,14 +20,8 @@ export const Home = () => {
             <div className="todo-heading">
               <h2>To - Do List</h2>
               <div>
-                <input
-                  type="text"
-                  className="input-add-task"
-                  placeholder="add task here"
-                  onChange={e=>setInputText(e.target.value)}
-                  value={inputText}
-                ></input>
-                <button className="add-task-btn" onClick={addTaskHandler}>+</button>
+    
+                <button className="add-task-btn" onClick={()=>setModalDisplay(true)}>+</button>
               </div>
             </div>
 

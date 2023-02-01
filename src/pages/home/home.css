@@ -57,13 +57,6 @@
   border: 1px solid rgb(40, 75, 230);
 }
 
-.input-add-task {
-  outline: none;
-  border: none;
-  border-bottom: 2px solid var(--secondary-blue);
-  height: 1rem;
-}
-
 .backgroundStop{
   pointer-events: none;
   opacity:0.5;

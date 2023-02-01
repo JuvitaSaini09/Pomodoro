@@ -8,14 +8,27 @@ const todoListContext=createContext(null);
 const TodoListContextProvider=({children})=>{
     const [todoTasks,setTodoTasks]=useState([]);
     const [isModalDisplay,setModalDisplay]=useState(false);
+    const [inputModal,setInputModal]=useState({
+        title:'',
+        description:'',
+        time:''
+    });
 
-    const addTodoTasks=(inputText)=>{
-        if(inputText!=='')
-        setTodoTasks([...todoTasks,{
-            id:uuid(),
-            title:inputText,
-            completed:false
-        }])
+    const addTodoTasks=(inputTaskData)=>{
+        if(inputTaskData.title!=='' && inputTaskData.description!=='' && inputTaskData.time!==''){
+            setTodoTasks(
+                [...todoTasks,{
+                    id:uuid(),
+                    title:inputTaskData.title,
+                    description:inputTaskData.description,
+                    time:inputTaskData.time,
+                    completed:false
+                }]
+            )
+            setModalDisplay(false);
+        }
+
+      
     }
 
     const deleteTodoTasks=taskToBeDeleted=>{
@@ -24,7 +37,7 @@ const TodoListContextProvider=({children})=>{
     }
     
 return(
-    <todoListContext.Provider value={{todoTasks,setTodoTasks,addTodoTasks,deleteTodoTasks,isModalDisplay,setModalDisplay}}>{children}</todoListContext.Provider>
+    <todoListContext.Provider value={{todoTasks,setTodoTasks,addTodoTasks,deleteTodoTasks,isModalDisplay,setModalDisplay,inputModal,setInputModal}}>{children}</todoListContext.Provider>
 )
 }
 
