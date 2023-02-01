@@ -6,3 +6,11 @@
   border:0;
 }
 
+
+:root {
+  --primary-blue: rgb(40, 75, 230);
+  --secondary-blue:rgb(67, 95, 219);
+  --light-blue: rgb(130, 147, 223);
+  --dark-white:rgb(240, 236, 236);
+}
+

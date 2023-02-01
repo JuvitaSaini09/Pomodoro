@@ -24,7 +24,7 @@
 }
 
 .todo-task-list button{
-    color:rgb(67, 95, 219);
+    color:var(--secondary-blue);
     margin:1rem;
     border:none;
     font-size:1.2rem;
@@ -33,6 +33,6 @@
 }
 
 .todo-task-list button:hover{
-    color:rgb(40, 75, 230);
+    color:var(--primary-blue);
     font-weight:bold;
 }
