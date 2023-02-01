@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./home.css";
 import { TodoList } from "../../components/todoList/todoList";
 import { useTodoListContext } from "../../context/todoListContext/todoListContext";
+import { TodoModal } from "../../components/modal/todoModal";
 
 export const Home = () => {
   const {addTodoTasks}=useTodoListContext();
@@ -38,7 +39,9 @@ export const Home = () => {
 
             <TodoList />
           </div>
+          <TodoModal />
         </div>
+        
       </div>
     </>
   );

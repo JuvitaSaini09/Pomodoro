@@ -1,0 +1,35 @@
+.todoModal{
+    height:25rem;
+    width:30rem;
+    background-color: var(--dark-white);
+    border-radius:20px;
+    position:absolute;
+    top:10rem;
+    left:auto;
+    margin-left:7rem;
+}
+
+.todoInputs{
+    display:flex;
+    flex-direction: column;
+    margin:2rem 4rem;
+    overflow-wrap: break-word; 
+}
+
+.todoInputs input{
+    margin:5px 0;
+   text-align: top;
+}
+
+.addTimeInput{
+    height:2rem;
+}
+
+.addTitleInput{
+    height:2rem;
+}
+
+
+.addDescriptionInput{
+    height:10rem;
+}
