@@ -16,7 +16,6 @@ export const Timer = () => {
   const [min, setMin] = useState(userTime);
   const [sec, setSec] = useState(0);
 const [isTimerStarted,setIsTimerStarted]=useState(false);
-let isTimecompleted=(false);
 
   //functions
   const currentSeconds = min * 60 + sec;
@@ -49,35 +48,48 @@ let isTimecompleted=(false);
         if (sec > 0) {
           setSec((prev) => prev - 1);
         }
+
+        if(min ===0 && sec===0){
+          // isTimecompleted=true;
+              const result=todoTasks.map((object) => {
+                if (object.id === currentUser.id)
+                  return {
+                     ...object,
+                    completed:true,
+                  };
+                else return object;
+              })
+            setTodoTasks(result);
+          
+        }
+
       }, 1000);
-     
+
       return () => clearInterval(interval);
     }
   });
 
 
-    if(min ===0 && sec===0){
-    isTimecompleted=true;
-  }
+   
 
   
-    useEffect(()=>{
-      const todoCompleted=()=>{
-        if(isTimecompleted){
-          const result=todoTasks.map((object) => {
-            if (object.id === currentUser.id)
-              return {
-                 ...object,
-                completed:true,
-              };
-            else return object;
-          })
-        setTodoTasks(result);
-        }
-      };
-      todoCompleted();
+    // useEffect(()=>{
+    //   const todoCompleted=()=>{
+    //     if(isTimecompleted){
+    //       const result=todoTasks.map((object) => {
+    //         if (object.id === currentUser.id)
+    //           return {
+    //              ...object,
+    //             completed:true,
+    //           };
+    //         else return object;
+    //       })
+    //     setTodoTasks(result);
+    //     }
+    //   };
+    //   todoCompleted();
      
-    },[isTimecompleted,currentUser.id,setTodoTasks,todoTasks])
+    // },[isTimecompleted,currentUser.id,setTodoTasks])
      
 
 
