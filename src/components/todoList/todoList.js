@@ -30,7 +30,7 @@ export const TodoList = () => {
         {todoTasks.map((task) => {
           return (
             <li className="todo-task-list" key={task.id}>
-              <NavLink to={`/timer/${task.id}`}><p>{task.title}</p></NavLink>
+              <NavLink className="navlinkTodo" to={`/timer/${task.id}`}><p>{task.title}</p></NavLink>
               <span>
                 <button
                   className="edit-btn"

@@ -44,7 +44,7 @@ export const TodoModal=()=>{
 
             <textarea type="text" placeholder="Add details" className="addDescriptionInput" onChange={e=>setInputModal({...inputModal,description:e.target.value})} value={inputModal.description} />
 
-            <input type="number" placeholder="Add minutes" className="addTimeInput" onChange={e=>setInputModal({...inputModal,time:e.target.value})} value={inputModal.time} />
+            <input type="number" placeholder="Add minutes from 1 to 60" className="addTimeInput" onChange={e=>setInputModal({...inputModal,time:e.target.value})} value={inputModal.time} min="1" max="60" />
             </div>
 
             <div className="modalBtn" >
