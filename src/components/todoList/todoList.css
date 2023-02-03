@@ -29,3 +29,12 @@
     color:purple;
     font-weight:bold;
 }
+.taskCompleted{
+  text-decoration: line-through;
+  color:var(--light-blue);
+}
+
+.taskCompleted:hover{
+    text-decoration: line-through;
+}
+

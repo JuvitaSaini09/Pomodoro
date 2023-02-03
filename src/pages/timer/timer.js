@@ -7,7 +7,7 @@ import { useTodoListContext } from "../../context/todoListContext/todoListContex
 
 export const Timer = () => {
   const {id}=useParams();
-  const {todoTasks}=useTodoListContext();
+  const {todoTasks,setTodoTasks}=useTodoListContext();
 
   //useState
   const currentUser=(todoTasks.filter(arr_obj=>arr_obj.id===id))[0];
@@ -16,11 +16,13 @@ export const Timer = () => {
   const [min, setMin] = useState(userTime);
   const [sec, setSec] = useState(0);
 const [isTimerStarted,setIsTimerStarted]=useState(false);
+let isTimecompleted=(false);
 
   //functions
   const currentSeconds = min * 60 + sec;
   const totalSeconds = userTime * 60;
   const percentage = Math.trunc((currentSeconds / totalSeconds) * 100);
+
   const resetHandler = () => {
     setMin(userTime);
     setSec(0);
@@ -31,6 +33,7 @@ const [isTimerStarted,setIsTimerStarted]=useState(false);
   const timerStartHandler=()=>{
     setIsTimerStarted(true);
     setIsPaused(false);
+    
   }
   const pauseHandler = () => {
     setIsPaused((prev) => !prev);
@@ -47,9 +50,38 @@ const [isTimerStarted,setIsTimerStarted]=useState(false);
           setSec((prev) => prev - 1);
         }
       }, 1000);
+     
       return () => clearInterval(interval);
     }
   });
+
+
+    if(min ===0 && sec===0){
+    isTimecompleted=true;
+  }
+
+  
+    useEffect(()=>{
+      if(min ===0 && sec===0){
+        const result=todoTasks.map((object) => {
+          if (object.id === currentUser.id)
+            return {
+                id:object.id,
+              title: currentUser.title,
+              description: currentUser.description,
+              time: currentUser.time,
+              completed:true,
+            };
+          else return object;
+        })
+      setTodoTasks(result);
+      }
+     
+    },[isTimecompleted])
+     
+
+
+ 
 
   return (
     <main className="timerBody">
@@ -70,7 +102,7 @@ const [isTimerStarted,setIsTimerStarted]=useState(false);
                   backgroundColor: '#3e98c7',
                 })}
               />
-              <p className="outOfMin">out of 60 min</p>
+              <p className="outOfMin">out of {userTime} min</p>
             </div>
            
             <div className="timerBtns">
@@ -85,7 +117,7 @@ const [isTimerStarted,setIsTimerStarted]=useState(false);
 <button onClick={resetHandler} className="resetStartBtn" >Reset</button>
               
             </div>
-            <NavLink to="/" className="goToHome"><i class="fas fa-arrow-alt-circle-left"></i> Go to Home</NavLink>
+            <NavLink to="/" className="goToHome"><i className="fas fa-arrow-alt-circle-left"></i> Go to Home</NavLink>
           </div>
         </section>
 
@@ -96,6 +128,7 @@ const [isTimerStarted,setIsTimerStarted]=useState(false);
           </div>
           
         </section>
+       
       </div>
     </main>
   );

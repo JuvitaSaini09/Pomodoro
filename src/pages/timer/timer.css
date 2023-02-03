@@ -74,6 +74,15 @@ font-family: 'Ubuntu', sans-serif;
   background-color: var(--secondary-blue);
 }
 
+.pauseResumeBtn:hover,
+.startBtn:hover{
+  background-color: var(--primary-blue);
+}
+
+.resetStartBtn:hover{
+  border: 1px solid var(--secondary-blue);
+}
+
 .fa-pause,
 .fa-play {
   color: white;
