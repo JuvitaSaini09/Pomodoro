@@ -1,3 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Itim&family=PT+Sans&family=Playfair+Display&family=Rowdies&family=Sofia+Sans:wght@400;900&family=Ubuntu&display=swap');
+
+input,textarea{
+    
+    font-family: 'Itim', cursive;
+font-family: 'Playfair Display', serif;
+font-family: 'PT Sans', sans-serif;
+font-family: 'Rowdies', cursive;
+font-family: 'Sofia Sans', sans-serif;
+font-family: 'Ubuntu', sans-serif;
+font-size: 16px;
+}
+
 .todoModal{
     height:27rem;
     width:27rem;
@@ -28,13 +41,15 @@
    border:none;
 }
 
-.todoInputs input{
+.todoInputs input,
+.addDescriptionInput{
     margin:5px 0;
    text-align: top;
    background-color:rgb(244, 240, 240);
    outline:none;
    border:none;
    padding:0 10px;
+   font-size:16px;
 }
 
 .addTimeInput,.addTitleInput{
@@ -44,6 +59,11 @@
 
 .addDescriptionInput{
     height:10rem;
+    text-align: start;
+}
+
+input:focus,textarea:focus{
+    border:2px solid var(--primary-blue);
 }
 
 
