@@ -1,0 +1,118 @@
+  @import url('https://fonts.googleapis.com/css2?family=Itim&family=PT+Sans&family=Playfair+Display&family=Rowdies&family=Sofia+Sans:wght@400;900&family=Ubuntu&display=swap');
+
+body{
+    font-family: 'Itim', cursive;
+font-family: 'Playfair Display', serif;
+font-family: 'PT Sans', sans-serif;
+font-family: 'Rowdies', cursive;
+font-family: 'Sofia Sans', sans-serif;
+font-family: 'Ubuntu', sans-serif;
+}
+.timerBody {
+  margin: 0;
+  padding: 0;
+  background-color: var(--secondary-blue);
+  border: 1px solid var(--secondary-blue);
+  height: 100vh;
+}
+
+.timerCard {
+  height: 28rem;
+  width: 45rem;
+  background-color: var(--dark-white);
+  border-radius: 20px;
+  margin: auto;
+  margin-top: 5rem;
+  background-color: var(--dark-white);
+  display: flex;
+}
+.progressBarContainer {
+  margin-top: 2rem;
+  position: relative;
+}
+
+.outOfMin {
+  color: var(--secondary-blue);
+  position: absolute;
+  top: 100px;
+  left: 50px;
+}
+.timerContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4rem;
+  
+}
+.col1,
+.col2 {
+  width: 22.5rem;
+}
+.timerBtns {
+  display: flex;
+  gap: 2rem;
+}
+
+.timerBtns button {
+  border: none;
+  height: 2.4rem;
+  width: 7rem;
+  word-spacing: 15px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.resetStartBtn {
+  color: var(--secondary-blue);
+  background-color: var(--transparent-blue);
+  font-weight: bold;
+}
+
+.pauseResumeBtn,
+.startBtn {
+  color: white;
+  background-color: var(--secondary-blue);
+}
+
+.pauseResumeBtn:hover,
+.startBtn:hover{
+  background-color: var(--primary-blue);
+}
+
+.resetStartBtn:hover{
+  border: 1px solid var(--secondary-blue);
+}
+
+.fa-pause,
+.fa-play {
+  color: white;
+}
+
+.goToHome {
+  color: rgb(169, 117, 19);
+  text-decoration: none;
+  font-size: 1.3rem;
+}
+.col2{
+    display:flex;
+    justify-content: center;
+    margin-top:1rem;
+
+}
+
+.task-details{
+    width:20rem;
+}
+
+.col2 p{
+  background-color: rgb(204, 206, 218,0.3);
+  padding:15px;
+  height:15rem;
+  margin:auto;
+  border-radius:10px;
+  text-align:left;
+  overflow-y: scroll;
+  font-size:1.1rem;
+  word-spacing:3px;
+  line-height:19px;
+}

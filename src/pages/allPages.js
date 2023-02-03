@@ -1,3 +1,3 @@
 import {Home} from "./home/home"
-
-export {Home}
+import {Timer} from "./timer/timer"
+export {Home,Timer}

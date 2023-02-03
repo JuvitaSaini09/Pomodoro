@@ -1,38 +1,40 @@
-.todo-task-list-container{
-
-}
-
 .todo-task-list{
     font-weight:500;
     font-size:1.1rem;
-}
-
-.todo-task-list{
     list-style-type:none;
     display: flex;
     justify-content: space-between;
     margin:0 2rem;
+}
+.navlinkTodo:hover{
+ color: purple;
+ text-decoration:underline;
+}
+.navlinkTodo{
+    width:10rem;
+    text-decoration: none;
+    color:var(--primary-blue);
+    font-size:1.3rem;
    
 }
-
-.edit-btn{
-  
-}
-
-.delete-btn{
-
-}
-
 .todo-task-list button{
     color:var(--secondary-blue);
     margin:1rem;
     border:none;
     font-size:1.2rem;
-    cursor: pointer;
-    
+    cursor: pointer;  
 }
 
 .todo-task-list button:hover{
-    color:var(--primary-blue);
+    color:purple;
     font-weight:bold;
 }
+.taskCompleted{
+  text-decoration: line-through;
+  color:var(--light-blue);
+}
+
+.taskCompleted:hover{
+    text-decoration: line-through;
+}
+
