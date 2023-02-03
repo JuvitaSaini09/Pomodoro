@@ -77,7 +77,7 @@ let isTimecompleted=(false);
       };
       todoCompleted();
      
-    },[isTimecompleted,currentUser.id,setTodoTasks])
+    },[isTimecompleted,currentUser.id,setTodoTasks,todoTasks])
      
 
 
