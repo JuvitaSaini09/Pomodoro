@@ -2,18 +2,20 @@ import "./timer.css";
 import { useState, useEffect } from "react";
 import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
-import { useParams } from "react-router-dom";
+import { NavLink, useParams } from "react-router-dom";
 import { useTodoListContext } from "../../context/todoListContext/todoListContext";
 
 export const Timer = () => {
   const {id}=useParams();
   const {todoTasks}=useTodoListContext();
+
   //useState
   const currentUser=(todoTasks.filter(arr_obj=>arr_obj.id===id))[0];
-  const [userTime, setUserTime] = useState(currentUser.time);
+  const userTime=currentUser.time;
   const [isPaused, setIsPaused] = useState(true);
   const [min, setMin] = useState(userTime);
   const [sec, setSec] = useState(0);
+const [isTimerStarted,setIsTimerStarted]=useState(false);
 
   //functions
   const currentSeconds = min * 60 + sec;
@@ -22,8 +24,14 @@ export const Timer = () => {
   const resetHandler = () => {
     setMin(userTime);
     setSec(0);
+    setIsTimerStarted(false);
+    setIsPaused(true);
   };
 
+  const timerStartHandler=()=>{
+    setIsTimerStarted(true);
+    setIsPaused(false);
+  }
   const pauseHandler = () => {
     setIsPaused((prev) => !prev);
   };
@@ -48,7 +56,7 @@ export const Timer = () => {
       <div className="timerCard">
         <section className="col1">
           <div className="timerContainer">
-            <div style={{ width: 150, height: 150 }}>
+            <div style={{ width: 200, height: 200 }} className="progressBarContainer">
               <CircularProgressbar
                 value={percentage}
                 text={`${min < 10 ? `0` + min : min}m :${
@@ -56,26 +64,37 @@ export const Timer = () => {
                 }s`}
                 styles={buildStyles({
                   textSize: "16px",
+                  pathColor: `rgba(67, 95, 219`,
+                  textColor: `rgba(67, 95, 219`,
+                  trailColor: '#d6d6d6',
+                  backgroundColor: '#3e98c7',
                 })}
               />
+              <p className="outOfMin">out of 60 min</p>
             </div>
-            <div>
-              {" "}
-              {min < 10 ? "0" + min : min}:{sec < 10 ? "0" + sec : sec}{" "}
-            </div>
+           
             <div className="timerBtns">
-              <button onClick={resetHandler}>Reset</button>
-              <button onClick={pauseHandler}>
-                {isPaused ? "Resume" : "Pause"}
-              </button>
+             
+           
+              
+                {isPaused ?(isTimerStarted
+                  ? <button onClick={pauseHandler} className="pauseResumeBtn" > <i className="fas fa-play"></i>  Resume</button>
+                  :<button onClick={timerStartHandler} className="startBtn"><i className="fas fa-play"></i> Start</button> 
+                  ): <button onClick={pauseHandler} className="pauseResumeBtn" ><i className="fas fa-pause"></i> Pause</button>} 
+
+<button onClick={resetHandler} className="resetStartBtn" >Reset</button>
+              
             </div>
+            <NavLink to="/" className="goToHome"><i class="fas fa-arrow-alt-circle-left"></i> Go to Home</NavLink>
           </div>
         </section>
 
         <section className="col2">
+          <div className="task-details">
           <h1>{currentUser.title}</h1>
           <p>{currentUser.description}</p>
-          <p>Date when task added</p>
+          </div>
+          
         </section>
       </div>
     </main>
