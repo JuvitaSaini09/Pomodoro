@@ -62,22 +62,25 @@ let isTimecompleted=(false);
 
   
     useEffect(()=>{
-      if(min ===0 && sec===0){
-        const result=todoTasks.map((object) => {
-          if (object.id === currentUser.id)
-            return {
-                id:object.id,
-              title: currentUser.title,
-              description: currentUser.description,
-              time: currentUser.time,
-              completed:true,
-            };
-          else return object;
-        })
-      setTodoTasks(result);
-      }
+      const todoCompleted=()=>{
+        if(min ===0 && sec===0){
+          const result=todoTasks.map((object) => {
+            if (object.id === currentUser.id)
+              return {
+                  id:object.id,
+                title: currentUser.title,
+                description: currentUser.description,
+                time: currentUser.time,
+                completed:true,
+              };
+            else return object;
+          })
+        setTodoTasks(result);
+        }
+      };
+      todoCompleted();
      
-    },[isTimecompleted,currentUser.description,currentUser.id,currentUser.time,currentUser.title,min,sec,setTodoTasks,todoTasks])
+    },[isTimecompleted])
      
 
 
