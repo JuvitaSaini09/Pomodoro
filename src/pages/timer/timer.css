@@ -1,0 +1,23 @@
+
+.timerBody{
+       margin:0;
+       padding:0;
+    background-color: var(--secondary-blue);
+    border:1px solid var(--secondary-blue);
+    height:100vh;
+}
+
+.timerCard{
+        height:27rem;
+        width:45rem;
+        background-color: var(--dark-white);
+        border-radius:20px;
+        margin:auto;
+        margin-top:5rem;
+        background-color: var(--dark-white);
+        display:flex;
+}
+.col1,.col2{
+    border:2px solid green;
+    width:22.5rem;
+}
