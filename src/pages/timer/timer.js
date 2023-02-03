@@ -77,7 +77,7 @@ let isTimecompleted=(false);
       setTodoTasks(result);
       }
      
-    },[isTimecompleted])
+    },[isTimecompleted,currentUser.description,currentUser.id,currentUser.time,currentUser.title,min,sec,setTodoTasks,todoTasks])
      
 
 
