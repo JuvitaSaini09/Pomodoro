@@ -63,14 +63,11 @@ let isTimecompleted=(false);
   
     useEffect(()=>{
       const todoCompleted=()=>{
-        if(min ===0 && sec===0){
+        if(isTimecompleted){
           const result=todoTasks.map((object) => {
             if (object.id === currentUser.id)
               return {
-                  id:object.id,
-                title: currentUser.title,
-                description: currentUser.description,
-                time: currentUser.time,
+                 ...object,
                 completed:true,
               };
             else return object;
