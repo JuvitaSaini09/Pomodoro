@@ -12,7 +12,7 @@
  text-decoration:underline;
 }
 .navlinkTodo{
-    width:10rem;
+    width:fit-content;
     text-decoration: none;
     color:var(--primary-blue);
     font-size:1.3rem; 
@@ -64,6 +64,6 @@
 
     ul{
         margin-left:0;
-        padding-left:0;
+        padding-left:10px;
     }
 }
