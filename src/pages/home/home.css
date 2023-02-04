@@ -64,11 +64,7 @@
 
 .addTasksHere{
   color:var(--secondary-blue);
-}
-
-.arrowDown{
-  background-color: pink;
-  border:2px solid green;
+  opacity: 0.8;
 }
 
 @media only screen and (max-width: 850px){

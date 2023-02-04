@@ -18,7 +18,11 @@ export const Home = () => {
 
           <div className={`todo-container ${isModalDisplay?`backgroundStop`:``}`}>
             <div className="todo-heading">
-              <h2>To - Do List</h2>
+              {
+                todoTasks.length!==0 
+                ? <h2>To - Do List</h2>
+                : null
+              }
               <div>
     
                 
@@ -38,8 +42,8 @@ export const Home = () => {
             {
               todoTasks.length===0
               ? (<div>
-                <h1 className="addTasksHere">Add Tasks Here</h1>
-                <button style={{height:5+"rem",width:5+"rem",fontSize:4+"rem",marginBottom:4+"rem"}} className="add-task-btn" onClick={()=>{
+                <h2 className="addTasksHere">Add Tasks Here</h2>
+                <button style={{height:3+"rem",width:3+"rem",fontSize:2.5+"rem",marginBottom:4+"rem"}} className="add-task-btn" onClick={()=>{
                   setModalDisplay(true);
                   setEditingOrAdding({
                     isAddingOrEditing:'adding',
