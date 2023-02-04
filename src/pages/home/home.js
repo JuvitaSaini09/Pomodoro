@@ -21,15 +21,35 @@ export const Home = () => {
               <h2>To - Do List</h2>
               <div>
     
-                <button className="add-task-btn" onClick={()=>{
+                
+                  {
+                    todoTasks.length!==0
+                    ?<button  className="add-task-btn" onClick={()=>{
+                      setModalDisplay(true);
+                      setEditingOrAdding({
+                        isAddingOrEditing:'adding',
+                        task:''
+                     });
+                      }}>+</button>
+                    : null
+                  }
+              </div>
+            </div>
+            {
+              todoTasks.length===0
+              ? (<div>
+                <h1 className="addTasksHere">Add Tasks Here</h1>
+                <button style={{height:5+"rem",width:5+"rem",fontSize:4+"rem",marginBottom:4+"rem"}} className="add-task-btn" onClick={()=>{
                   setModalDisplay(true);
                   setEditingOrAdding({
                     isAddingOrEditing:'adding',
                     task:''
                  });
                   }}>+</button>
-              </div>
-            </div>
+                </div>)
+              
+              : null
+            }
 
             <TodoList />
            </div>
