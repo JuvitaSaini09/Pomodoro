@@ -70,31 +70,6 @@ const [isTimerStarted,setIsTimerStarted]=useState(false);
   });
 
 
-   
-
-  
-    // useEffect(()=>{
-    //   const todoCompleted=()=>{
-    //     if(isTimecompleted){
-    //       const result=todoTasks.map((object) => {
-    //         if (object.id === currentUser.id)
-    //           return {
-    //              ...object,
-    //             completed:true,
-    //           };
-    //         else return object;
-    //       })
-    //     setTodoTasks(result);
-    //     }
-    //   };
-    //   todoCompleted();
-     
-    // },[isTimecompleted,currentUser.id,setTodoTasks])
-     
-
-
- 
-
   return (
     <main className="timerBody">
       <div className="timerCard">
