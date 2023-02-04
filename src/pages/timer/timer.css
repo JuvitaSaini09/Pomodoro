@@ -42,7 +42,6 @@ font-family: 'Ubuntu', sans-serif;
   flex-direction: column;
   align-items: center;
   gap: 4rem;
-  
 }
 .col1,
 .col2 {
@@ -93,11 +92,18 @@ font-family: 'Ubuntu', sans-serif;
   text-decoration: none;
   font-size: 1.3rem;
 }
+.goToHome:hover{
+  color: rgb(133, 89, 8);
+}
 .col2{
     display:flex;
     justify-content: center;
     margin-top:1rem;
-
+    height:25rem;
+    width: 21rem;
+      background-color: var(--secondary-blue);
+        color: white;
+    border-radius:10px;
 }
 
 .task-details{
@@ -112,7 +118,107 @@ font-family: 'Ubuntu', sans-serif;
   border-radius:10px;
   text-align:left;
   overflow-y: scroll;
-  font-size:1.1rem;
+  font-size:1rem;
   word-spacing:3px;
   line-height:19px;
+}
+
+
+@media only screen and (max-width: 850px){
+
+
+  .timerCard {
+    width: 36rem;
+  }
+
+  .col1{
+  width: 18rem;
+}
+
+.col2 {
+  width: 17rem;
+}
+
+
+.timerBtns {
+  gap: 1rem;
+}
+
+.timerBtns button {
+  height: 2.4rem;
+  width: 6rem;
+}
+.task-details{
+  width:16.5rem;
+}
+.col2 p{
+font-size:1rem;
+margin:10px;
+}
+}
+
+@media only screen and (max-width: 620px){
+
+   .timerCard {
+    width: 25rem;
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+  }
+
+  .timerBody {
+    height: auto;
+  } 
+
+  .col2{
+
+    margin-bottom: 2rem;
+    border-radius: 10px;
+    width: 21rem;
+  }
+
+  .col2 p{
+    margin-bottom: 2rem;
+  }
+
+  .task-details{
+    width:20rem;
+}
+
+}
+
+@media only screen and (max-width: 500px){
+
+  .timerCard {
+   width: 22rem;
+ }
+
+ .col2{
+   width: 20rem;
+ }
+}
+
+@media only screen and (max-width: 420px){
+
+  .timerCard {
+   width: 19rem;
+ }
+
+ .col2{
+   width: 18rem;
+ }
+
+
+}
+
+@media only screen and (max-width: 420px){
+
+  .timerCard {
+   width: 17rem;
+ }
+
+ .col2{
+   width: 15rem;
+ }
+
 }
