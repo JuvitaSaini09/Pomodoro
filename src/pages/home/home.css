@@ -62,6 +62,15 @@
   opacity:0.5;
 }
 
+.addTasksHere{
+  color:var(--secondary-blue);
+}
+
+.arrowDown{
+  background-color: pink;
+  border:2px solid green;
+}
+
 @media only screen and (max-width: 850px){
 
   .home-body {
