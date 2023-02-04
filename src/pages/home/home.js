@@ -32,8 +32,10 @@ export const Home = () => {
             </div>
 
             <TodoList />
-          </div>
-          <TodoModal />
+           </div>
+         <div className="todoModalContainer">
+         <TodoModal />
+         </div>
         </div>
         
       </div>

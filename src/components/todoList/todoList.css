@@ -1,10 +1,11 @@
+
 .todo-task-list{
     font-weight:500;
     font-size:1.1rem;
     list-style-type:none;
     display: flex;
     justify-content: space-between;
-    margin:0 2rem;
+    margin:0rem;
 }
 .navlinkTodo:hover{
  color: purple;
@@ -14,9 +15,9 @@
     width:10rem;
     text-decoration: none;
     color:var(--primary-blue);
-    font-size:1.3rem;
-   
+    font-size:1.3rem; 
 }
+
 .todo-task-list button{
     color:var(--secondary-blue);
     margin:1rem;
@@ -38,3 +39,31 @@
     text-decoration: line-through;
 }
 
+
+@media only screen and (max-width: 550px){
+    
+    .todo-task-list button{
+    margin:1rem;
+    font-size:1.2rem; 
+}
+}
+
+
+@media only screen and (max-width: 480px){
+    .navlinkTodo{
+        font-size:1.1rem; 
+    }
+    .todo-task-list button{ 
+        margin:10px;
+        font-size:1.1rem;
+    }
+    .todo-task-list{
+    display: flex;
+    justify-content: space-between;
+    }
+
+    ul{
+        margin-left:0;
+        padding-left:0;
+    }
+}

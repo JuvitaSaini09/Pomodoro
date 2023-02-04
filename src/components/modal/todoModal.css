@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Itim&family=PT+Sans&family=Playfair+Display&family=Rowdies&family=Sofia+Sans:wght@400;900&family=Ubuntu&display=swap');
 
+.todoModalContainer{
+    display:flex;
+    justify-content: center;
+}
+
 input,textarea{
     
     font-family: 'Itim', cursive;
@@ -18,9 +23,8 @@ font-size: 16px;
     border-radius:20px;
     position:absolute;
     top:8rem;
-    left:auto;
-    margin-left:7rem;
     background-color: white;
+    margin:auto;
 }
 
 .crossModalBtn{
@@ -100,3 +104,19 @@ background-color: var(--transparent-blue);
     background-color: var(--primary-blue);
 }
 
+@media only screen and (max-width: 750px){
+   
+}
+
+@media only screen and (max-width: 600px){
+    .todoModal{
+        width:24rem;
+    }
+
+}
+
+@media only screen and (max-width: 450px){
+    .todoModal{
+        width:20rem;
+    }
+}
